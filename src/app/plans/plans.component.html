@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Yearly plans in monthly installments</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-4" *ngFor="let plan of plans">
+        <div class="card plan-card">
+          <div class="card-body text-center">
+            <h3 class="plan-title">{{ plan.label }}</h3>
+            <p class="text-muted mb-2">{{ plan.details }}</p>
+            <p class="plan-price">{{ plan.price | currency:'USD':'symbol':'1.2-2' }}/mo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PhoneService, Phone } from '../services/phone.service';
 
 @Component({
   selector: 'app-home',
@@ -8,39 +9,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  phones = [
-    {
-      name: 'iPhone 14 Pro Max',
-      price: 1199,
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSHMmCPsxPvdh3Cia7lNS8_qfc8-W3ojdbTg&s'
-    },
-    {
-      name: 'Samsung Galaxy S23 Ultra',
-      price: 999,
-      image: 'https://carulla.vtexassets.com/arquivos/ids/17336594/celular-samsung-galaxy-s23-ultra-5g-256-g-verde.jpg?v=638608909718770000'
-    },
-    {
-      name: 'Google Pixel 8 Pro',
-      price: 899,
-      image: 'https://http2.mlstatic.com/D_NQ_NP_984389-MLA74807971605_022024-O.webp'
-    }
-  ];
+  phones: Phone[] = [];
+  filteredPhones: Phone[] = [];
 
-  filteredPhones = [...this.phones];
+  constructor(private router: Router, private phoneService: PhoneService) {}
 
-  constructor(private router: Router) {}
-
-  filterPhones(term: string) {
-    if (!term) {
-      this.filteredPhones = [...this.phones];
-    } else {
-      this.filteredPhones = this.phones.filter(phone =>
-        phone.name.toLowerCase().includes(term)
-      );
-    }
+  ngOnInit() {
+    this.phones = this.phoneService.getPhones();
+    this.filteredPhones = [...this.phones];
   }
 
-  goToOffer(phone: any) {
-    this.router.navigate(['/mvno-offer'], { queryParams: { product: phone.name } });
+  filterPhones(term: string) {
+    this.filteredPhones = term
+      ? this.phones.filter(p => p.name.toLowerCase().includes(term))
+      : [...this.phones];
+  }
+
+  goToDetails(phone: Phone) {
+    this.router.navigate(['/product-details', phone.id]);
+  }
+  getCoupon() {
+    this.router.navigate(['/plans']);
   }
 }

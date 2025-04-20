@@ -1,93 +1,60 @@
-.home-container {
-  padding: 40px;
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-}
-
-h1 {
-  text-align: center;
-  color: #222;
+.promo-banner {
+  background-color: #0065d1;
+  padding: 30px 20px;
   margin-bottom: 40px;
 }
 
-.product-grid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.product-card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 240px;
-  padding: 20px;
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-  margin-bottom: 15px;
-}
-
-.product-card h3 {
-  font-size: 18px;
-  color: #333;
-}
-
-.product-card p {
-  font-size: 16px;
-  color: #666;
-}
-
-.product-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-}
-.button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.button-group button {
-  padding: 10px;
-  font-size: 14px;
+.coupon-button {
+  background-color: #f7f7f7;
+  color: #0065d1;
+  font-weight: bold;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 25px;
+  padding: 10px 24px;
+  font-size: 16px;
+  margin-top: 15px;
   transition: background-color 0.2s ease;
 }
 
-.buy-btn {
-  background-color: #3665f3;
-  color: white;
+.coupon-button:hover {
+  background-color: #e1e1e1;
 }
 
-.buy-btn:hover {
-  background-color: #1a48c7;
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cart-btn {
-  background-color: #f7c200;
-  color: #000;
+.modal-box {
+  background: white;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.cart-btn:hover {
-  background-color: #e5b100;
+.modal-header,
+.modal-footer {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
 }
 
-.details-btn {
-  background-color: #eee;
-  color: #333;
+.modal-footer {
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.details-btn:hover {
-  background-color: #ddd;
+.uniform-img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
 }

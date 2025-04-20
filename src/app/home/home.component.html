@@ -1,20 +1,28 @@
 <app-header (searchTerm)="filterPhones($event)"></app-header>
 
-<div class="home-container">
-  <h1>Available Mobile Phones</h1>
-  <div class="product-grid">
-    <div
-      class="product-card"
-      *ngFor="let phone of filteredPhones"
-    >
-      <img [src]="phone.image" alt="{{ phone.name }}" />
-      <h3>{{ phone.name }}</h3>
-      <p>{{ phone.price | currency }}</p>
+<section class="promo-banner text-white text-center">
+  <div class="container">
+    <h2>Get $50 off a yearly mobile plan</h2>
+    <p>Activate your Yearly Plan Today with the purchase of any phone.</p>
+    <button class="coupon-button" (click)="getCoupon()">Get Coupon</button>
+  </div>
+</section>
 
-      <div class="button-group">
-        <button class="buy-btn" (click)="goToOffer(phone)">Buy Now</button>
-        <button class="cart-btn">Add to Cart</button>
-        <button class="details-btn">See All Details</button>
+<div class="home-container container">
+  <h1 class="text-center mb-4">Available Mobile Phones</h1>
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let phone of filteredPhones">
+      <div class="card product-card h-100 text-center">
+        <img [src]="phone.image" class="card-img-top uniform-img" alt="{{ phone.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ phone.name }}</h5>
+          <p class="card-text">{{ phone.price | currency }}</p>
+          <div class="btn-group-vertical w-100">
+            <button class="btn btn-primary mb-2" (click)="goToDetails(phone)">Buy Now</button>
+            <button class="btn btn-warning mb-2">Add to Cart</button>
+            <button class="btn btn-outline-secondary">See All Details</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

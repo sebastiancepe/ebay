@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { EbayMvnoOfferComponent } from './ebay-mvno-offer/ebay-mvno-offer.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { PlansComponent } from './plans/plans.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     EbayMvnoOfferComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProductDetailsComponent,
+    PlansComponent
   ],
   imports: [
     BrowserModule,
