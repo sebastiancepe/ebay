@@ -1,0 +1,21 @@
+<div class="ebay-container">
+  <div class="product-section">
+    <div class="product-image">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay logo">
+    </div>
+    <div class="product-info">
+      <h1>Activate Your Mobile Plan with eBay</h1>
+      <p *ngIf="selectedProduct" class="selected-product">
+        You purchased: <strong>{{ selectedProduct }}</strong>
+      </p>
+      <p class="offer-highlight">
+        Subscribe to a yearly plan and get a <span class="amount">$50</span> credit.
+      </p>
+      <p class="offer-description">
+        This exclusive offer is available only to eBay customers who purchase a mobile device.
+        Take advantage of this opportunity and enjoy special benefits when activating your mobile line with us.
+      </p>
+      <button class="cta-button">Get My $50 Credit Plan</button>
+    </div>
+  </div>
+</div>

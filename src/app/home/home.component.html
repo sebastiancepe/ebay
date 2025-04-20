@@ -1,0 +1,21 @@
+<app-header (searchTerm)="filterPhones($event)"></app-header>
+
+<div class="home-container">
+  <h1>Available Mobile Phones</h1>
+  <div class="product-grid">
+    <div
+      class="product-card"
+      *ngFor="let phone of filteredPhones"
+    >
+      <img [src]="phone.image" alt="{{ phone.name }}" />
+      <h3>{{ phone.name }}</h3>
+      <p>{{ phone.price | currency }}</p>
+
+      <div class="button-group">
+        <button class="buy-btn" (click)="goToOffer(phone)">Buy Now</button>
+        <button class="cart-btn">Add to Cart</button>
+        <button class="details-btn">See All Details</button>
+      </div>
+    </div>
+  </div>
+</div>

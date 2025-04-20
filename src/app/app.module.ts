@@ -3,10 +3,18 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { EbayMvnoOfferComponent } from './ebay-mvno-offer/ebay-mvno-offer.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    EbayMvnoOfferComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
