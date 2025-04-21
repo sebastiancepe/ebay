@@ -10,6 +10,7 @@ import { PhoneService, Phone } from '../services/phone.service';
 })
 export class ProductDetailsComponent implements OnInit {
   phone: Phone | undefined;
+  selectedOption: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,5 +25,9 @@ export class ProductDetailsComponent implements OnInit {
     if (!this.phone) {
       this.router.navigate(['/']); // fallback si el ID no existe
     }
+  }
+  
+  selectOption(option: string): void {
+    this.selectedOption = this.selectedOption === option ? null : option;
   }
 }
