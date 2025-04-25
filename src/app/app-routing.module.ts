@@ -9,7 +9,9 @@ const routes: Routes = [
 
   { path: '', component: HomeComponent },
   { path: 'mvno-offer', component: EbayMvnoOfferComponent },
-  { path: 'product-details/:id', component: ProductDetailsComponent },
+  { path: 'product-details/:id', component: ProductDetailsComponent,   
+    data: {
+    render: false} },
   { path: 'plans', component: PlansComponent },
   { path: '**', redirectTo: '' }
 ];
